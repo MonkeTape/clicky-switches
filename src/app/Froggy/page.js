@@ -80,15 +80,20 @@ export default function Frog() {
         scene.add(greenLine);
         scene.add(blueLine);
 
-        // const light = new THREE.AmbientLight(0x404040, Math.PI); // soft white light
+        // const light = new THREE.AmbientLight(0xfffff0, Math.PI); // soft white light
         // scene.add(light);
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, Math.PI);
+        const directionalLight = new THREE.DirectionalLight(0xfff8dc, Math.PI);
+        directionalLight.position.y = 10;
+        directionalLight.position.x = 10;
+        directionalLight.position.z = 20;
+        directionalLight.lookAt(origin);
+
         scene.add(directionalLight);
         renderer.render(scene, camera);
         var animate = function () {
           requestAnimationFrame(animate);
-          // gltf.scene.rotation.x += 0.1;
+          //gltf.scene.rotation.x += 0.1;
           gltf.scene.rotation.y += 0.01;
           renderer.render(scene, camera);
         };
