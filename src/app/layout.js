@@ -1,6 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./_components/Header";
 //this is my comments
+
+const apple2Font = localFont({
+  src: "./PrintChar21.ttf",
+  variable: "--font-apple-2",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +28,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${apple2Font.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
