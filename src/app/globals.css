@@ -18,15 +18,24 @@
   --color-computer-green-500: #c8fbd4;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "apple2Font", Helvetica, sans-serif;
+}
+
+.plaid {
+  background:
+    linear-gradient(315deg, transparent 75%, #c8fbd4 0)-2px 0,
+    linear-gradient(45deg, transparent 75%, #c8fbd4 0) 2px 0,
+    linear-gradient(135deg, black 50%, transparent 0) 0 0,
+    linear-gradient(45deg, black 50%, black 0) 0 0 black;
+  background-size: 4px 4px;
 }
