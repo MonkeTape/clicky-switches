@@ -22,7 +22,7 @@ function DesktopIcon({ imageSrc, alt, name, bounds = null }) {
     <Draggable nodeRef={nodeRef} bounds={bounds}>
       <div
         ref={nodeRef}
-        className="flex flex-col items-center justify-center text-black w-[50px] h-[75px]"
+        className="flex flex-col items-center justify-center text-black w-[50px] h-[75px] cursor-pointer"
       >
         <div className="bg-computer-green-500">{image}</div>
         <div className="bg-computer-green-500 text-ellipsis">
