@@ -15,7 +15,10 @@ function DesktopIcon({ imageSrc, alt, name }) {
       height={50}
       alt={altMessage}
       draggable={false}
-    />
+      style={{
+        maxWidth: "100%",
+        height: "auto"
+      }} />
   );
   return (
     <Draggable nodeRef={nodeRef}>
