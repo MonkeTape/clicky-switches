@@ -28,10 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${apple2Font.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${apple2Font.variable} antialiased flex flex-col w-screen h-screen`}
       >
         <Header />
-        {children}
+        {/* <div className="desktop flex-1 plaid p-5">{children}</div> */}
+        <div className="desktop flex-1 plaid p-5 relative">{children}</div>
       </body>
     </html>
   );
