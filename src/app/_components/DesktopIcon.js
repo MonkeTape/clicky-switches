@@ -3,7 +3,7 @@ import Image from "next/image";
 import Draggable from "react-draggable";
 import { useRef } from "react";
 
-function DesktopIcon({ imageSrc, alt, name, bounds = null }) {
+function DesktopIcon({ imageSrc, alt, name, bounds = "parent" }) {
   const nodeRef = useRef(null);
   // have a default image thing to use as the image if we don't get one
   const source = imageSrc ? imageSrc : "/default_icon.png";
@@ -19,13 +19,13 @@ function DesktopIcon({ imageSrc, alt, name, bounds = null }) {
     />
   );
   return (
-    <Draggable nodeRef={nodeRef} bounds={bounds}>
+    <Draggable nodeRef={nodeRef} bounds={bounds} grid={[75, 90]}>
       <div
         ref={nodeRef}
-        className="flex flex-col items-center justify-center text-black w-[50px] h-[75px] cursor-pointer"
+        className="flex flex-col items-center justify-center text-black  cursor-pointer border-black border max-w-[75px]"
       >
-        <div className="bg-computer-green-500">{image}</div>
-        <div className="bg-computer-green-500 text-ellipsis">
+        <div>{image}</div>
+        <div className="text-ellipsis overflow-hidden whitespace-nowrap max-w-full">
           {name || "name"}
         </div>
       </div>
