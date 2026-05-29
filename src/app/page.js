@@ -1,16 +1,17 @@
 import DesktopIcon from "./_components/DesktopIcon";
-import FolderModal from "./_components/PopUpModals/FolderModal";
 import PopUpWindow from "./_components/PopUpModals/PopUpWindow";
 
-export default function MyThree() {
+export default function Desktop() {
   return (
-    <div className="text-computer-green-500">
-      Desktop Text
-      <DesktopIcon name="anthonysicon"></DesktopIcon>
-      <PopUpWindow title={"Example!"}>
-        <div className="w-[400px]">Window Content</div>
+    <>
+      <DesktopIcon name="parent" bounds="parent"></DesktopIcon>
+
+      <PopUpWindow title="Example!">Window Content</PopUpWindow>
+      <PopUpWindow title="Example Folder">
+        <DesktopIcon name="Icon1231213"></DesktopIcon>
+        <DesktopIcon name="Icon2"></DesktopIcon>
+        <DesktopIcon name="Icon3"></DesktopIcon>
       </PopUpWindow>
-      <FolderModal />
-    </div>
+    </>
   );
 }
