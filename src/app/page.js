@@ -1,17 +1,11 @@
-import DesktopIcon from "./_components/DesktopIcon";
-import PopUpWindow from "./_components/PopUpModals/PopUpWindow";
+"use client";
+import { WindowsProvider } from "@/context/WindowsContext";
+import Desktop from "./_components/Desktop";
 
-export default function Desktop() {
+export default function Page() {
   return (
-    <>
-      <DesktopIcon name="parent" bounds="parent"></DesktopIcon>
-
-      <PopUpWindow title="Example!">Window Content</PopUpWindow>
-      <PopUpWindow title="Example Folder">
-        <DesktopIcon name="Icon1231213"></DesktopIcon>
-        <DesktopIcon name="Icon2"></DesktopIcon>
-        <DesktopIcon name="Icon3"></DesktopIcon>
-      </PopUpWindow>
-    </>
+    <WindowsProvider>
+      <Desktop />
+    </WindowsProvider>
   );
 }

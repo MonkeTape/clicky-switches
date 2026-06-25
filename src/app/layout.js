@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./_components/Header";
-//this is my comments
 
 const apple2Font = localFont({
   src: "./PrintChar21.ttf",
@@ -31,7 +30,6 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${apple2Font.variable} antialiased flex flex-col w-screen h-screen`}
       >
         <Header />
-        {/* <div className="desktop flex-1 plaid p-5">{children}</div> */}
         <div className="desktop flex-1 plaid p-5 relative">{children}</div>
       </body>
     </html>

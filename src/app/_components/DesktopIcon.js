@@ -2,8 +2,11 @@
 import Image from "next/image";
 import Draggable from "react-draggable";
 import { useRef } from "react";
+import { useWindows } from "@/context/WindowsContext";
 
 function DesktopIcon({ imageSrc, alt, name, bounds = "parent" }) {
+  const { addWindow } = useWindows();
+
   const nodeRef = useRef(null);
   // have a default image thing to use as the image if we don't get one
   const source = imageSrc ? imageSrc : "/default_icon.png";
@@ -23,6 +26,12 @@ function DesktopIcon({ imageSrc, alt, name, bounds = "parent" }) {
       <div
         ref={nodeRef}
         className="flex flex-col items-center justify-center text-black  cursor-pointer border-black border max-w-[75px]"
+        onDoubleClick={() => {
+          addWindow(
+            "New Window",
+            <div>This is the content of the window.</div>,
+          );
+        }}
       >
         <div>{image}</div>
         <div className="text-ellipsis overflow-hidden whitespace-nowrap max-w-full">
