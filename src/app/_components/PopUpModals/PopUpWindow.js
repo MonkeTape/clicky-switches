@@ -2,8 +2,9 @@
 import Draggable from "react-draggable";
 import PopUpHeader from "./PopUpHeader";
 import { useRef } from "react";
+import { FaCross } from "react-icons/fa";
 
-function PopUpWindow({ title, children, bounds = "parent" }) {
+function PopUpWindow({ title, children, closeWindow, bounds = "parent" }) {
   const nodeRef = useRef(null);
   return (
     <Draggable
@@ -13,7 +14,7 @@ function PopUpWindow({ title, children, bounds = "parent" }) {
       bounds={bounds}
     >
       <div ref={nodeRef} className="max-w-xl max-h-xl">
-        <PopUpHeader>{title}</PopUpHeader>
+        <PopUpHeader closeWindow={closeWindow}>{title}</PopUpHeader>
         <div className="bg-computer-green-500 border-2 border-t-0 border-black text-black p-5 relative">
           {children}
         </div>
